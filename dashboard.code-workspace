@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveSassCompile.settings.generateMap": true,
+		"liveSassCompile.settings.formats": [
+			{
+				"format": "expanded",
+				"extensionName": ".css",
+				"savePath": "/css"
+			},
+			{
+				"format": "compressed",
+				"extensionName": ".min.css",
+				"savePath": "/css/dist"
+			}
+		],
+		"liveSassCompile.settings.excludeList": [
+			"**/node_modules/**",
+			".vscode/**",
+			"/src/scss/bootstrap/**",
+			"/src/scss/bootstrap-rtl-fix/**",
+			"/src/scss/custom/*",
+			"/src/scss/free/**",
+		],
+		"liveSassCompile.settings.autoprefix": [
+			"> 1%",
+			"last 2 versions"
+		],
+		"window.autoDetectColorScheme": true
+	}
+}
