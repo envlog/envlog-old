@@ -9,59 +9,64 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
   <!-- Google Fonts Roboto -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&Roboto:wght@300;400;500;700&display=swap" />
   <!-- MDB -->
   <link rel="stylesheet" href="css/mdb.free.css" />
   <!-- Custom styles -->
+  <link rel="stylesheet" href="css/inc/navbar.css" /> 
   <link rel="stylesheet" href="css/inc/dashboard.css" />
 </head>
 
-<body>
-
-    <div id="wrapper">
-
-        <aside id="sidebar-wrapper">
-            <div class="sidebar-brand">
-                <img src="https://via.placeholder.com/100x38?text=logo" class="me-2" height="20" alt="" loading="lazy" />
-            </div>
-            <ul class="sidebar-nav">
-            <li class="active">
-                <a href="#"><i class="fa fa-home"></i>Home</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-plug"></i>Plugins</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-user"></i>Users</a>
-            </li>
-            </ul>
-        </aside>
-
-        <div id="navbar-wrapper">
-            <nav class="navbar navbar-dark bg-primary text-light">
-                <div class="container-fluid justify-content-start">
-                    <div class="navbar-header">
-                        <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
-                    </div>
-                    <a class="navbar-brand" href="#">
-                        <img src="https://via.placeholder.com/100x38?text=logo" class="me-2" height="20" alt="" loading="lazy" />
-                        <small>envlog</small>
-                    </a>
-
-                </div>
-            </nav>
-        </div>
-
-    </div>
+<body class="sidebar" id="body-pd">
 
     <!--Main Navigation-->
-    <header>
-
-           
+    <header class="header bg-success navbar-dark text-white" id="header">
+        <div class="header_toggle"> <i class="fa fa-bars" id="header-toggle"></i> </div>
+        <span >envlog</span>
+        <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt="profile"> </div>
     </header>
     <!--Main Navigation-->
+    <div class="l-navbar" id="nav-bar">
+          <nav class="nav">
+              <div> 
+                  <a href="#" class="nav_logo">
+                    <i class="fa fa-bullseye nav_logo-icon"></i> 
+                    <span class="nav_logo-name">envlog</span> 
+                  </a>
 
-    
+                  <div class="nav_list"> 
+                    <a href="#" class="nav_link active"> 
+                      <i class="fa fa-bullseye nav_icon"></i> 
+                      <span class="nav_name">Dashboard</span> 
+                    </a> 
+                    <a href="#" class="nav_link"> 
+                      <i class="fa fa-bullseye nav_icon"></i> 
+                      <span class="nav_name">Grafici</span> 
+                    </a> 
+                    <a href="#" class="nav_link"> 
+                      <i class="fa fa-bullseye nav_icon"></i> 
+                      <span class="nav_name">Storici</span> 
+                    </a> 
+                    <a href="#" class="nav_link"> 
+                      <i class="fa fa-bullseye nav_icon"></i> 
+                      <span class="nav_name">Altro</span> 
+                    </a> 
+                    <a href="#" class="nav_link"> 
+                      <i class="fa fa-bullseye nav_icon"></i> 
+                      <span class="nav_name">Sensori</span> 
+                    </a> 
+                    <a href="#" class="nav_link"> 
+                      <i class="fa fa-bullseye nav_icon"></i> 
+                      <span class="nav_name">Impostazioni</span> 
+                    </a> 
+                  </div>
+              </div> 
+              <a href="#" class="nav_link"> 
+                <i class="fa fa-bullseye nav_icon"></i> 
+                <span class="nav_name">Esci</span> 
+              </a>
+          </nav>
+    </div>
 
     <!--Main layout-->
     <main>
@@ -69,10 +74,15 @@
         
     </main>
     <!--Main layout-->
+    
+    
+    
+    
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript" src="js/inc/dashboard.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 
