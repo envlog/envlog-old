@@ -22,6 +22,7 @@
 
     <header class="header bg-success navbar-dark text-white" id="header">
         <div class="header_toggle"> <i class="fa fa-bars" id="header-toggle"></i> </div>
+        <span class="text-secondary text-white">envlog</span>
         <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
     </header>
     <div class="l-navbar" id="nav-bar">
@@ -59,20 +60,24 @@
                     </a> 
                   </div>
               </div> 
-              <a href="#" class="nav_link"> 
-                <i class="fa fa-bullseye nav_icon"></i> 
-                <span class="nav_name">Esci</span> 
+              <a href="/profile.html" id="avatar" class="nav_link"> 
+                <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="nav_icon rounded-circle" style="width: 22px;" alt="" />
+                <span class="nav_name">Ciao, <span></span></span> 
               </a>
           </nav>
     </div>
 
     <!--Main layout-->
-    <main>
-        <div class="container py-5">
+    <main class="mb-5">
+
+
+          <div class="container py-5">
             <div class="row gutters-sm">
               <div class="col-md-4 d-none d-md-block py-5">
                 <div class="card">
                   <div class="card-body">
+
+
                     <div class="nav flex-column nav-pills nav-gap-y-1">
                       <a href="#profile" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user mr-2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Informazioni profilo
@@ -90,6 +95,8 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card mr-2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> Carta di credito
                       </a>
                     </div>
+
+
                   </div>
                 </div>
               </div>
@@ -266,6 +273,89 @@
               </div>
             </div>
       
+          </div>
+
+          <div class="row container">
+            <div class="col-12 col-md-4">
+
+              <!-- Tab navs -->
+              <div class="nav flex-column nav-pills nav-justified text-center" id="v-tabs-tab" role="tablist" aria-orientation="vertical" >
+
+                <a class="nav-link active" id="v-tabs-home-tab" data-mdb-toggle="tab" href="#v-tabs-home" role="tab" aria-controls="v-tabs-home" aria-selected="true" >
+                  <i class="fas fa-cog"></i> Home
+                </a >
+                <a class="nav-link" id="v-tabs-profile-tab" data-mdb-toggle="tab" href="#v-tabs-profile" role="tab" aria-controls="v-tabs-profile" aria-selected="false" >
+                  <i class="fas fa-user"></i> Profilo
+                </a >
+                <a class="nav-link" id="v-tabs-security-tab" data-mdb-toggle="pill" href="#v-tabs-security" role="tab" aria-controls="v-tabs-security" aria-selected="false" >
+                  <i class="fas fa-shield-alt"></i> Sicurezza
+                </a >
+                <a class="nav-link" id="v-tabs-alert-tab" data-mdb-toggle="pill" href="#v-tabs-alert" role="tab" aria-controls="v-tabs-alert" aria-selected="false" >
+                  <i class="fas fa-bell"></i> Notifiche
+                </a >
+                <a class="nav-link" id="v-tabs-payments-tab" data-mdb-toggle="tab" href="#v-tabs-payments" role="tab" aria-controls="v-tabs-payments" aria-selected="false" >
+                  <i class="fas fa-cart-plus"></i> Pagamenti
+                </a >
+              </div>
+              <!-- Tab navs -->
+
+            </div>
+
+            <div class="col-12 col-md-8">
+              <!-- Tab content -->
+              <div class="tab-content p-5" id="v-tabs-tabContent">
+
+                <div class="tab-pane fade show active"  id="v-tabs-home" role="tabpanel" aria-labelledby="v-tabs-home-tab" >
+                   Home content
+                </div>
+
+                <div class="tab-pane fade" id="v-tabs-profile" role="tabpanel" aria-labelledby="v-tabs-profile-tab">
+
+                        <h6>YOUR PROFILE INFORMATION</h6>
+                        <hr>
+                        <form>
+                          <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" aria-describedby="fullNameHelp" placeholder="Enter your fullname" value="Kenneth Valdez">
+                            <small id="fullNameHelp" class="form-text text-muted">Your name may appear around here where you are mentioned. You can change or remove it at any time.</small>
+                          </div>
+                          <div class="form-group">
+                            <label for="bio">Your Bio</label>
+                            <textarea class="form-control autosize" id="bio" placeholder="Write something about you" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 62px;">A front-end developer that focus more on user interface design, a web interface wizard, a connector of awesomeness.</textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="url">URL</label>
+                            <input type="text" class="form-control" id="url" placeholder="Enter your website address" value="http://benije.ke/pozzivkij">
+                          </div>
+                          <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="Enter your location" value="Bay Area, San Francisco, CA">
+                          </div>
+                          <div class="form-group small text-muted">
+                            All of the fields on this page are optional and can be deleted at any time, and by filling them out, you're giving us consent to share this data wherever your user profile appears.
+                          </div>
+                          <button type="button" class="btn btn-primary">Update Profile</button>
+                          <button type="reset" class="btn btn-light">Reset Changes</button>
+                        </form>
+
+                  
+                </div>
+
+                <div class="tab-pane fade" id="v-tabs-security" role="tabpanel" aria-labelledby="v-tabs-security-tab" >
+                  Sicurezza content
+                </div>
+
+                <div class="tab-pane fade" id="v-tabs-alert" role="tabpanel" aria-labelledby="v-tabs-alert-tab" >
+                  alert content
+                </div>
+
+                <div class="tab-pane fade" id="v-tabs-payments" role="tabpanel" aria-labelledby="v-tabs-payments-tab" >
+                  pagamenti
+                </div>
+
+              </div>
+              <!-- Tab content -->
+            </div>
           </div>
         
     </main>
