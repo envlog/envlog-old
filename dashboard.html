@@ -19,168 +19,184 @@
 
 <body class="sidebar" id="body-pd">
 
-    <!--Main Navigation-->
-    <header class="header bg-success navbar-dark text-white" id="header">
-        <div class="header_toggle"> <i class="fa fa-bars" id="header-toggle"></i> </div>
-        <span >envlog</span>
-        <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt="profile"> </div>
-    </header>
-    <!--Main Navigation-->
-    <div class="l-navbar" id="nav-bar">
-          <nav class="nav">
-              <div> 
-                  <a href="#" class="nav_logo">
-                    <i class="fa fa-bullseye nav_logo-icon"></i> 
-                    <span class="nav_logo-name">envlog</span> 
-                  </a>
+        <!--Main Navigation-->
+        <header class="header bg-success navbar-dark text-white" id="header">
+            <div class="header_toggle"> <i class="fa fa-bars" id="header-toggle"></i> </div>
+            <span>envlog</span>
+            <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt="profile"> </div>
+        </header>
+        <!--Main Navigation-->
+        <div class="l-navbar" id="nav-bar">
+              <nav class="nav">
+                  <div> 
+                      <a href="#" class="nav_logo">
+                        <i class="fa fa-bullseye nav_logo-icon"></i> 
+                        <span class="nav_logo-name">envlog</span> 
+                      </a>
 
-                  <div class="nav_list"> 
-                    <a href="#" class="nav_link active"> 
-                      <i class="fa fa-bullseye nav_icon"></i> 
-                      <span class="nav_name">Dashboard</span> 
-                    </a> 
-                    <a href="#" class="nav_link"> 
-                      <i class="fa fa-bullseye nav_icon"></i> 
-                      <span class="nav_name">Grafici</span> 
-                    </a> 
-                    <a href="#" class="nav_link"> 
-                      <i class="fa fa-bullseye nav_icon"></i> 
-                      <span class="nav_name">Storici</span> 
-                    </a> 
-                    <a href="#" class="nav_link"> 
-                      <i class="fa fa-bullseye nav_icon"></i> 
-                      <span class="nav_name">Altro</span> 
-                    </a> 
-                    <a href="#" class="nav_link"> 
-                      <i class="fa fa-bullseye nav_icon"></i> 
-                      <span class="nav_name">Sensori</span> 
-                    </a> 
-                    <a href="#" class="nav_link"> 
-                      <i class="fa fa-bullseye nav_icon"></i> 
-                      <span class="nav_name">Impostazioni</span> 
-                    </a> 
-                  </div>
-              </div> 
-              <a href="#" class="nav_link"> 
-                <i class="fa fa-bullseye nav_icon"></i> 
-                <span class="nav_name">Esci</span> 
-              </a>
-          </nav>
-    </div>
-
-    <!--Main layout-->
-    <main>
-      
-      <div class="col-12">
-          <h2>I miei sensori</h2>
-      </div>
-      <div class="row row-cols-2 row-cols-md-4 p-3 g-3" style="transform: scale(0.9);">
-          <div class="col">
-            <div class="card" style="color: #4B515D; border-radius: 35px;" data-uid="37357">
-              <img src="https://img.icons8.com/color/96/000000/cold.png" class="card-img-top"  alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">22.5 C°</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card"style="color: #4B515D; border-radius: 35px;"  data-uid="25531">
-              <img src="https://img.icons8.com/color/96/000000/cold.png" class="card-img-top"  alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">22.5 C°</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="https://mdbootstrap.com/img/new/standard/city/043.jpg"  class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural lead-in to
-                  additional content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="https://mdbootstrap.com/img/new/standard/city/044.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural lead-in to
-                  additional content. This content is a little bit longer.
-                </p>
-              </div>
-            </div>
-          </div>
-      </div>
-
-      <div class="col">
-        <h2>Altri dati utili</h2>
-        <br>
-      </div>
-      <div class="container mb-5">
-          <div class="row justify-content-center">
-            <div class="col-12">
-
-                      <div id="wrapper-bg" class="card text-white bg-image shadow-4-strong" style="background-image: url('img/clouds.gif')">
-                        <!-- Main current data -->
-                        <div class="card-header p-4 border-0">
-                          <div class="text-center mb-3">
-                            
-                            <p class="h2 mb-1" id="wrapper-name"> {{citta}}</p>
-                            <p class="mb-1" id="wrapper-description">{{desc}}</p>
-                            <p class="display-1 mb-1" id="wrapper-temp">{{temp}}</p>
-                            <span class="">Pressione: <span id="wrapper-pressure">{{press}}</span></span>
-                            <span class="mx-2">|</span>
-                            <span class="">Umidità: <span id="wrapper-humidity">{{umidita}}</span></span>
-                          </div>
-                        </div>
-
-                        <!-- Hourly forecast -->
-                        <div class="card-body p-4 mb-2">
-                          <div class="row text-center">
-
-                            <div class="col-4">
-                              <strong class="d-block mb-2">Oggi</strong>
-                              <img id="wrapper-icon-today" src="" class="" alt="" />
-                              <strong class="d-block"  id="wrapper-forecast-temp-today"></strong>
-                            </div>
-
-                            <div class="col-4">
-                              <strong class="d-block mb-2">Domani</strong>
-                              <img id="wrapper-icon-tomorrow" src="" class="" alt="" />
-                              <strong class="d-block" id="wrapper-forecast-temp-tomorrow"></strong>
-                            </div>
-
-                            <div class="col-4">
-                              <strong class="d-block mb-2">Dopodomani</strong>
-                              <img id="wrapper-icon-dAT" src="" class="" alt="" />
-                              <strong class="d-block" id="wrapper-forecast-temp-dAT"></strong>
-                            </div>
-                          </div>
-                        </div>
-
-
+                      <div class="nav_list"> 
+                        <a href="#" class="nav_link active"> 
+                          <i class="fa fa-bullseye nav_icon"></i> 
+                          <span class="nav_name">Dashboard</span> 
+                        </a> 
+                        <a href="#" class="nav_link"> 
+                          <i class="fa fa-bullseye nav_icon"></i> 
+                          <span class="nav_name">Grafici</span> 
+                        </a> 
+                        <a href="#" class="nav_link"> 
+                          <i class="fa fa-bullseye nav_icon"></i> 
+                          <span class="nav_name">Storici</span> 
+                        </a> 
+                        <a href="#" class="nav_link"> 
+                          <i class="fa fa-bullseye nav_icon"></i> 
+                          <span class="nav_name">Altro</span> 
+                        </a> 
+                        <a href="#" class="nav_link"> 
+                          <i class="fa fa-bullseye nav_icon"></i> 
+                          <span class="nav_name">Sensori</span> 
+                        </a> 
+                        <a href="#" class="nav_link"> 
+                          <i class="fa fa-bullseye nav_icon"></i> 
+                          <span class="nav_name">Impostazioni</span> 
+                        </a> 
                       </div>
+                  </div> 
+                  <a href="#" class="nav_link"> 
+                    <i class="fa fa-bullseye nav_icon"></i> 
+                    <span class="nav_name">Esci</span> 
+                  </a>
+              </nav>
+        </div>
 
-            </div>
+        <!--Main layout-->
+        <main>
+          
+          <div class="col-12">
+              <h2>I miei sensori</h2>
           </div>
-      </div>
-        
-    </main>
-    <!--Main layout-->
+          <div class="row row-cols-2 row-cols-md-4 p-3 g-3" id="sensors-card" style="transform: scale(0.9);">
+
+
+              <div class="col">
+                  <div class="card" data-uid="1234">
+                      <div class="card-body">
+                          <div class="card-text">
+                              <img src="https://img.icons8.com/color/96/000000/water.png" data-image="" class="rounded-circle w-50 p-3 bg-primary img-fluid" alt="...">
+                              <div class="text-end">
+                                <h3 class="h2" data-value="">100<span>L</span></h3>
+                                <small data-type="">Acqua</small>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col">
+                  <div class="card" data-uid="1234">
+                      <div class="card-body">
+                          <div class="card-text">
+                              <img src="https://img.icons8.com/color/96/000000/pressure.png" data-image="" class="rounded-circle w-50 p-3 bg-primary" alt="...">
+                              <div class="text-end">
+                                <h3 class="h2" data-value="">50<span>mbar</span></h3>
+                                <small data-type="">Pressione</small>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col">
+                  <div class="card" data-uid="1234">
+                      <div class="card-body">
+                          <div class="card-text">
+                              <img src="https://img.icons8.com/color/96/000000/cold.png" data-image="" class="rounded-circle w-50 p-3 bg-info" alt="...">
+                              <div class="text-end">
+                                <h3 class="h2" data-value="">22.5<span>C°</span></h3>
+                                <small data-type="">Temperatura</small>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col">
+                  <div class="card" data-uid="1234">
+                      <div class="card-body">
+                          <div class="card-text">
+                              <img src="https://img.icons8.com/color/96/000000/humidity.png" data-image="" class="rounded-circle w-50 p-3 bg-warning" alt="...">
+                              <div class="text-end">
+                                <h3 class="h2" data-value="">65<span>%</span></h3>
+                                <small data-type="">Umidità</small>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="col">
+            <h2>Altri dati utili</h2>
+            <br>
+          </div>
+          <div class="container mb-5">
+              <div class="row justify-content-center">
+                <div class="col-12">
+
+                          <div id="wrapper-bg" class="card text-white bg-image shadow-4-strong" style="background-image: url('img/clouds.gif')">
+                            <!-- Main current data -->
+                            <div class="card-header p-4 border-0">
+                              <div class="text-center mb-3">
+                                
+                                <p class="h2 mb-1" id="wrapper-name"> {{citta}}</p>
+                                <p class="mb-1" id="wrapper-description">{{desc}}</p>
+                                <p class="display-1 mb-1" id="wrapper-temp">{{temp}}</p>
+                                <span class="">Pressione: <span id="wrapper-pressure">{{press}}</span></span>
+                                <span class="mx-2">|</span>
+                                <span class="">Umidità: <span id="wrapper-humidity">{{umidita}}</span></span>
+                              </div>
+                            </div>
+
+                            <!-- Hourly forecast -->
+                            <div class="card-body p-4 mb-2">
+                              <div class="row text-center">
+
+                                <div class="col-4">
+                                  <strong class="d-block mb-2">Oggi</strong>
+                                  <img id="wrapper-icon-today" src="" class="" alt="" />
+                                  <strong class="d-block"  id="wrapper-forecast-temp-today"></strong>
+                                </div>
+
+                                <div class="col-4">
+                                  <strong class="d-block mb-2">Domani</strong>
+                                  <img id="wrapper-icon-tomorrow" src="" class="" alt="" />
+                                  <strong class="d-block" id="wrapper-forecast-temp-tomorrow"></strong>
+                                </div>
+
+                                <div class="col-4">
+                                  <strong class="d-block mb-2">Dopodomani</strong>
+                                  <img id="wrapper-icon-dAT" src="" class="" alt="" />
+                                  <strong class="d-block" id="wrapper-forecast-temp-dAT"></strong>
+                                </div>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                </div>
+              </div>
+          </div>
+            
+        </main>
+        <!--Main layout-->
     
-    
-    
-    
-    <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript" src="js/inc/dashboard.js"></script>
-    <script src="js/app.js"></script>
+        <!-- MDB -->
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+
+        <!-- Custom scripts -->
+        <script type="text/javascript" src="js/inc/dashboard.js"></script>
+        <script src="js/app.js"></script>
 
 </body>
 
