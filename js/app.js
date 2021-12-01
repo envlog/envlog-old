@@ -1,11 +1,16 @@
+
+//FIREBASE DATA
 window.addEventListener('load', function () {
 
-    document.getElementById("sign-in").innerHTML = localStorage.getItem("auth-displayName");
-    document.getElementById("account-details").innerHTML = localStorage.getItem("auth-email") + " | Sei entrato con " + localStorage.getItem("auth-provider");
-    document.getElementById("account-image").innerHTML = "<img src='" + localStorage.getItem("auth-photoURL") + "'>"
+    //document.getElementById("avatar").innerHTML = localStorage.getItem("auth-displayName");
+    //document.getElementById("account-details").innerHTML = localStorage.getItem("auth-email") + " | Sei entrato con " + localStorage.getItem("auth-provider");
+    //document.getElementById("account-image").innerHTML = "<img src='" + localStorage.getItem("auth-photoURL") + "'>"
+
+    document.querySelector('#avatar img.nav_icon').src= localStorage.getItem("auth-photoURL");
+    document.querySelector('#avatar .nav_name span').textContent = localStorage.getItem("auth-displayName").split(" ")[0];
 });
 
-
+// RESPONSIVE NAVBAR
 document.addEventListener("DOMContentLoaded", function (event) {
 
     const showNavbar = (toggleId, navId, bodyId, headerId) => {
