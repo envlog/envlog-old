@@ -1,4 +1,4 @@
-+// API call
+// API call
 let queryUrl = "https://api.openweathermap.org/data/2.5/onecall?";
 let lat = "lat=37.5023612&";
 let lon = "lon=15.0873718&";
