@@ -113,27 +113,16 @@
     padding: .5rem 0 .5rem 1.5rem
 }
 
-      
 
-      
-
-      
-
-      
-
-      
-
-      
-
-      .show {
-          left: 0
-      }
+.show {
+    left: 0
+}
 
 .body-pd {
     padding-left: calc(68px + 1rem)
 }
 
-.active {
+.nav_link.active {
     color: $white;
 
     &:before {
