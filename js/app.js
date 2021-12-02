@@ -61,7 +61,7 @@ var options = {
 
 function success(pos) {
   var crd = pos.coords;
-
+ 
   console.log('Your current position is:');
   console.log(`Latitude : ${crd.latitude}`);
   console.log(`Longitude: ${crd.longitude}`);
