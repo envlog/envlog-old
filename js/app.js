@@ -8,6 +8,8 @@ window.addEventListener('load', function () {
 
     document.querySelector('#avatar img.nav_icon').src= localStorage.getItem("auth-photoURL");
     document.querySelector('#avatar .nav_name span').textContent = localStorage.getItem("auth-displayName").split(" ")[0];
+
+    
 });
 
 // RESPONSIVE NAVBAR
@@ -49,3 +51,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 });
+
+
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  var crd = pos.coords;
+
+  console.log('Your current position is:');
+  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Longitude: ${crd.longitude}`);
+  console.log(`More or less ${crd.accuracy} meters.`);
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
+
+
+
