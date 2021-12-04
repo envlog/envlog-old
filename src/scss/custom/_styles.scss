@@ -4,12 +4,27 @@
     font-family: $secondary-font;
     font-size: 2em;
 }
-
 .sidebar main {
     margin-top: 5rem;
 }
-
 .masklock {
   backdrop-filter: blur(9px);
   background-color: rgba($black, 0.55);
 }
+
+//backgrounds
+
+.custom-bg-aqua {
+  background-image: linear-gradient( #1acfbf, $info);
+}
+.custom-bg-coral {
+  background-image: linear-gradient( sandybrown, tomato);
+}
+.custom-bg-green {
+  background-image: linear-gradient( palegreen, mediumaquamarine);
+}
+.custom-bg-gold {
+  background-image: linear-gradient( moccasin, #Ffcc20);
+}
+
+
