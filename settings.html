@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Index</title>
+  <title>Impostazioni</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
   <!-- Google Fonts Roboto -->
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/inc/settings.css" /> 
 </head>
 
-<body class="sidebar" id="body-pd">
+<body class="sidebar bg-light" id="body-pd">
 
 
     <!--- START NAVBAR -->
@@ -94,26 +94,26 @@
 
     <!--Main layout-->
     <main class="mb-5">
-        <div class="row container mt-md-5">
+        <div class="row container mt-md-5 mx-auto">
           <div class="col-12 col-md-4 mt-md-5">
 
             <!-- Tab navs -->
             <div class="nav flex-column nav-pills nav-justified text-center" id="v-tabs-tab" role="tablist" aria-orientation="vertical" >
 
               <a class="nav-link active" id="v-tabs-home-tab" data-mdb-toggle="tab" href="#v-tabs-home" role="tab" aria-controls="v-tabs-home" aria-selected="true" >
-                <i class="fas fa-cog"></i> IMPOSTAZIONI ACCOUNT
+                <span class=""><i class="fas fa-cog p-1"></i>IMPOSTAZIONI ACCOUNT</span>
               </a >
               <a class="nav-link" id="v-tabs-profile-tab" data-mdb-toggle="tab" href="#v-tabs-profile" role="tab" aria-controls="v-tabs-profile" aria-selected="false" >
-                <i class="fas fa-user"></i> Profilo
+                <span class=""><i class="fas fa-user p-1"></i> Profilo</span>
               </a >
               <a class="nav-link" id="v-tabs-security-tab" data-mdb-toggle="pill" href="#v-tabs-security" role="tab" aria-controls="v-tabs-security" aria-selected="false" >
-                <i class="fas fa-shield-alt"></i> Sicurezza
+                <span class=""><i class="fas fa-shield-alt p-1"></i> Sicurezza </span>
               </a >
               <a class="nav-link" id="v-tabs-alert-tab" data-mdb-toggle="pill" href="#v-tabs-alert" role="tab" aria-controls="v-tabs-alert" aria-selected="false" >
-                <i class="fas fa-bell"></i> Notifiche
+                <span class=""><i class="fas fa-bell p-1"></i> Notifiche </span>
               </a >
               <a class="nav-link" id="v-tabs-payments-tab" data-mdb-toggle="tab" href="#v-tabs-payments" role="tab" aria-controls="v-tabs-payments" aria-selected="false" >
-                <i class="fas fa-cart-plus"></i> Pagamenti
+                <span class=""><i class="fas fa-cart-plus p-1"></i> Pagamenti </span>
               </a >
             </div>
             <!-- Tab navs -->
@@ -125,20 +125,20 @@
             <div class="tab-content p-5" id="v-tabs-tabContent">
 
               <div class="tab-pane fade show active"  id="v-tabs-home" role="tabpanel" aria-labelledby="v-tabs-home-tab" >
-                <h6>IL TUO PROFILO</h6>
+                <h5>IL TUO PROFILO</h5>
                 <hr>
                 <form>
                   <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Inserisci username">
+                    <input type="text" class="form-control p-2" id="username" aria-describedby="usernameHelp" placeholder="Inserisci username">
                   </div>
                   <div class="form-group mt-3">
                     <label for="location">Località</label>
-                    <input type="text" class="form-control" id="location" placeholder="Inserisci la località">
+                    <input type="text" class="form-control p-2" id="location" placeholder="Inserisci la località">
                   </div>
-                  <div class="form-group mt-3">
+                  <div class="form-group mt-3 mb-3">
                       <label for="data">Formato data e ora</label>
-                      <input type="datetime-local" class="form-control" id="data">
+                      <input type="datetime-local" class="form-control p-2" id="data">
                   </div>
                   <button type="button" class="btn btn-primary mt-3">Salva</button>
                   <button type="reset" class="btn btn-light">Annulla</button>
@@ -146,12 +146,12 @@
               </div>
 
               <div class="tab-pane fade" id="v-tabs-profile" role="tabpanel" aria-labelledby="v-tabs-profile-tab">
-                <h6>IMPOSTAZIONI ACCOUNT</h6>
+                <h5>IMPOSTAZIONI ACCOUNT</h5>
                 <hr>
                 <form>
                   <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Inserisci username">
+                    <input type="text" class="form-control p-2" id="username" aria-describedby="usernameHelp" placeholder="Inserisci username">
                   </div>
                   <hr>
                   <div class="form-group">
@@ -163,14 +163,14 @@
               </div>
 
               <div class="tab-pane fade" id="v-tabs-security" role="tabpanel" aria-labelledby="v-tabs-security-tab" >
-                <h6>SICUREZZA</h6>
+                <h5>SICUREZZA</h5>
                 <hr>
                 <form>
                   <div class="form-group">
                     <label class="d-block">Cambia Password</label>
-                    <input type="text" class="form-control" placeholder="Inserisci vecchia password">
-                    <input type="text" class="form-control mt-2" placeholder="Nuova password">
-                    <input type="text" class="form-control mt-2" placeholder="Conferma nuova password">
+                    <input type="text" class="form-control mt-3 p-2" placeholder="Inserisci vecchia password">
+                    <input type="text" class="form-control mt-3 p-2" placeholder="Nuova password">
+                    <input type="text" class="form-control mt-3 p-2" placeholder="Conferma nuova password">
                   </div>
                   <button type="button" class="btn btn-primary mt-3">Salva</button>
                   <button type="reset" class="btn btn-light">Annulla</button>
@@ -178,7 +178,7 @@
               </div>
 
               <div class="tab-pane fade" id="v-tabs-alert" role="tabpanel" aria-labelledby="v-tabs-alert-tab" >
-                <h6>NOTIFICHE</h6>
+                <h5>NOTIFICHE</h5>
                 <hr>
                 <form>
                   <div class="form-group">
@@ -189,8 +189,8 @@
                       <label class="custom-control-label" for="customCheck1">Invia un'e-mail ogni volta che viene superata la soglia di temperatura</label>
                     </div>
                   </div>
-                  <div class="form-group mb-0">
-                    <label class="d-block mt-2">NOTIFICHE SMS</label>
+                  <div class="form-group mt-5">
+                    <label class="d-block mb-3">NOTIFICHE SMS</label>
                     <ul class="list-group list-group-sm">
                       <li class="list-group-item has-icon">
                         Soglie d'allarme
@@ -219,7 +219,7 @@
               </div>
 
               <div class="tab-pane fade" id="v-tabs-payments" role="tabpanel" aria-labelledby="v-tabs-payments-tab" >
-                <h6>PAGAMENTI</h6>
+                <h5>PAGAMENTI</h5>
                 <hr>
 
                 <form>
@@ -230,8 +230,8 @@
                       Aggiungi metodo di pagamento<!--trigger modal-->
                     </button>
                   </div>
-                  <div class="form-group mb-0">
-                    <label class="d-block mt-3">Storico pagamenti</label>
+                  <div class="form-group mt-5">
+                    <label class="d-block mt-5">Storico pagamenti</label>
                     <div class="border border-gray-500 bg-gray-200 p-3 text-center font-size-sm">Non hai ancora fatto nessun pagamento.</div>
                   </div>
                 </form>
@@ -375,14 +375,6 @@
                     </div>
                   </div>
                 </div>
-
-
-                    position: fixed;
-    bottom: 0;
-    margin: auto;
-    width: 100%;
-    max-width: inherit;
-
 
               </div>
             </div>
