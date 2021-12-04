@@ -35,7 +35,7 @@
           <nav class="nav">
               <div> 
                   <a href="#" class="nav_logo">
-                    <svg class="nav_icon" version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 45" width="25" height="auto">
+                    <svg class="nav_icon" version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 45" width="25" height="25">
                       <title>leaf-svg</title>
                       <style>
                         tspan { white-space:pre }
@@ -158,52 +158,55 @@
 
           </div>
 
-          <div class="col">
-            <h2 class="mx-3">Altri dati utili</h2>
-            <br>
-          </div>
           
-          <div class="container mb-5">
-              <div class="row justify-content-center">
+          <div class="col container-fluid mb-5" id="weather">
+              <div class="alert alert-secondary d-none" role="alert">
+                Errore con la posizione GPS!
+              </div>
+              <div class="row justify-content-center content">
+                
+                <h2 class="mx-3">Altri dati utili</h2>
                 <div class="col-12">
-                    <div id="wrapper-bg" class="card text-white bg-image shadow-4-strong" style="background-image: url('img/clouds.gif')">
-                      <!-- Main current data -->
-                      <div class="card-header p-4 border-0">
-                        <div class="text-center mb-3"> 
-                          <p class="h2 mb-1" id="wrapper-name"> {{citta}}</p>
-                          <p class="mb-1" id="wrapper-description">{{desc}}</p>
-                          <p class="display-1 mb-1" id="wrapper-temp">{{temp}}</p>
-                          <span class="">Pressione: <span id="wrapper-pressure">{{press}}</span></span>
-                          <span class="mx-2">|</span>
-                          <span class="">Umidità: <span id="wrapper-humidity">{{umidita}}</span></span>
-                        </div>
-                      </div>
+                    <div id="wrapper-bg" class="card text-white bg-image shadow-4-strong forecast" style="background-image: url('img/clouds.gif')">
 
-                      <!-- Hourly forecast -->
-                      <div class="card-body p-4 mb-2">
-                        <div class="row text-center">
-
-                          <div class="col-4">
-                            <strong class="d-block mb-2">Oggi</strong>
-                            <img id="wrapper-icon-today" src="" class="" alt="" />
-                            <strong class="d-block"  id="wrapper-forecast-temp-today"></strong>
-                          </div>
-
-                          <div class="col-4">
-                            <strong class="d-block mb-2">Domani</strong>
-                            <img id="wrapper-icon-tomorrow" src="" class="" alt="" />
-                            <strong class="d-block" id="wrapper-forecast-temp-tomorrow"></strong>
-                          </div>
-
-                          <div class="col-4">
-                            <strong class="d-block mb-2">Dopodomani</strong>
-                            <img id="wrapper-icon-dAT" src="" class="" alt="" />
-                            <strong class="d-block" id="wrapper-forecast-temp-dAT"></strong>
+                        <div class="card-header p-4 border-0">
+                          <div class="text-center mb-3"> 
+                            <p class="h2 mb-1" id="wrapper-name"> {{citta}}</p>
+                            <p class="mb-1" id="wrapper-description">{{desc}}</p>
+                            <p class="display-1 mb-1" id="wrapper-temp">{{temp}}</p>
+                            <span class="">Pressione: <span id="wrapper-pressure">{{press}}</span></span>
+                            <span class="mx-2">|</span>
+                            <span class="">Umidità: <span id="wrapper-humidity">{{umidita}}</span></span>
+                            <br>
+                            <span class=""><span id="wrapper-windspeed">{{windspeed}}</span><i class="fas fa-wind"></i></span>
                           </div>
                         </div>
-                      </div>
+
+                        <div class="card-body p-4 mb-2">
+                          <div class="row text-center">
+
+                            <div class="col-4">
+                              <strong class="d-block mb-2">Oggi</strong>
+                              <img id="wrapper-icon-today" src="" class="" alt="" />
+                              <strong class="d-block"  id="wrapper-forecast-temp-today"></strong>
+                            </div>
+
+                            <div class="col-4">
+                              <strong class="d-block mb-2">Domani</strong>
+                              <img id="wrapper-icon-tomorrow" src="" class="" alt="" />
+                              <strong class="d-block" id="wrapper-forecast-temp-tomorrow"></strong>
+                            </div>
+
+                            <div class="col-4">
+                              <strong class="d-block mb-2">Dopodomani</strong>
+                              <img id="wrapper-icon-dAT" src="" class="" alt="" />
+                              <strong class="d-block" id="wrapper-forecast-temp-dAT"></strong>
+                            </div>
+                          </div>
+                        </div>
                     </div>
                 </div>
+                
               </div>
           </div>
             
@@ -262,6 +265,8 @@
         <!-- Custom scripts -->
         <script type="text/javascript" src="js/inc/dashboard.js"></script>
         <script src="js/app.js"></script>
+
+        <!-- da controllare -->
         <script type="text/javascript" src="js/inc/admin.js"></script>
 
 </body>

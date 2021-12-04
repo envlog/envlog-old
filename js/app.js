@@ -1,15 +1,22 @@
 
-//FIREBASE DATA
+//GET AUTH DATA
 window.addEventListener('load', function () {
+
+    var element = document.querySelector('#avatar .nav_name span');
+    if (localStorage.getItem("auth-displayName")) {
+        document.querySelector('#avatar img.nav_icon').src = localStorage.getItem("auth-photoURL");
+        document.querySelector('#avatar .nav_name span').textContent = localStorage.getItem("auth-displayName").split(" ")[0];
+    }
+    //if (typeof (element) != 'undefined' && element != null) {
+    // Exists.
+    //}
 
     //document.getElementById("avatar").innerHTML = localStorage.getItem("auth-displayName");
     //document.getElementById("account-details").innerHTML = localStorage.getItem("auth-email") + " | Sei entrato con " + localStorage.getItem("auth-provider");
     //document.getElementById("account-image").innerHTML = "<img src='" + localStorage.getItem("auth-photoURL") + "'>"
 
-    document.querySelector('#avatar img.nav_icon').src= localStorage.getItem("auth-photoURL");
-    document.querySelector('#avatar .nav_name span').textContent = localStorage.getItem("auth-displayName").split(" ")[0];
 
-    
+
 });
 
 // RESPONSIVE NAVBAR
@@ -53,26 +60,37 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 
-var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
-
-function success(pos) {
-  var crd = pos.coords;
- 
-  console.log('Your current position is:');
-  console.log(`Latitude : ${crd.latitude}`);
-  console.log(`Longitude: ${crd.longitude}`);
-  console.log(`More or less ${crd.accuracy} meters.`);
+//CONVERTITORI
+function FtoC(celsius) {
+    return (celsius * (9 / 5)) + 32;
 }
 
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
+function CtoF(fahrenheit) {
+    return (fahrenheit - 32) * (5 / 9);
 }
 
-navigator.geolocation.getCurrentPosition(success, error, options);
+//CONVERT COORD2NAMECITY
+function geotocity(geolat, geolon) {
+
+    let reversegeopath = "http://api.openweathermap.org/geo/1.0/reverse?";
+
+    let lat = geolat;
+    let lon = geolon;
+
+    let apiKey = "f630b86b58c4cd82f43f631bbffd5395";
+
+    let reversegeoapi = reversegeopath + "lat=" + lat + "&lon=" + lon + "&limit=1&appid=" + apiKey;
+
+    //alert("DEBUG: API geo2city foo: " + reversegeoapi);
+
+    fetch(reversegeoapi)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("DEBUG: geo2cityname: " + data[0].name);
+            sessionStorage.setItem('city', data[0].name)
+        });
+
+}
 
 
 
