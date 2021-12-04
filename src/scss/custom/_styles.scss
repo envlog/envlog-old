@@ -12,6 +12,13 @@
   background-color: rgba($black, 0.55);
 }
 
+//rounded cards
+
+.card {
+  border-radius: .60rem;
+}
+
+
 //backgrounds
 
 .custom-bg-aqua {
@@ -26,5 +33,4 @@
 .custom-bg-gold {
   background-image: linear-gradient( moccasin, #Ffcc20);
 }
-
 
