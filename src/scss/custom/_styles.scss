@@ -1,6 +1,4 @@
 // Your custom variables
-.text-secondary {}
-
 
 .header span {
     font-family: $secondary-font;
@@ -9,4 +7,9 @@
 
 .sidebar main {
     margin-top: 5rem;
+}
+
+.masklock {
+  backdrop-filter: blur(9px);
+  background-color: rgba($black, 0.55);
 }

@@ -45,7 +45,8 @@
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                     <h3>Entra nella tua dashboard</h3>
-                    <form>
+
+                    <form method="GET" action="#!" name="loginform" onsubmit="return login();">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                             <input type="email" id="email" class="form-control form-control-lg" />
@@ -67,8 +68,10 @@
                             <a href="#!">Hai dimenticato la password?</a>
                         </div>
 
+
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block" id=loginbtn>Accedi</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="loginbtn">Accedi</button>
+
 
                         <div class="divider my-4">
                             <p class="text-center fw-bold mx-3 mb-0 text-muted">Oppure entra con</p>
@@ -85,7 +88,6 @@
                         <a class="btn btn-primary btn-lg btn-block" style="color: #686868; background-color: #ffffff" href="#!" role="button">
                             <i class="fab fa-google me-2"></i>Continua con Google
                         </a>-->
-
                     </form>
                 </div>
             </div>
