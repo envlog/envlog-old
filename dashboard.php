@@ -1,7 +1,7 @@
 <?php include('env.php'); ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
 
@@ -16,8 +16,12 @@
 
 <body class="sidebar bg-light" id="body-pd">
 
-            <!-- NAVBAR -->
-            <?php include('inc/navbar.php'); ?>
+        <!-- NAVBAR -->
+        <?php include('inc/navbar.php'); ?>
+
+
+        
+        <!--------- START PAGE ----------->
 
         <!--Main layout-->
         <main>
@@ -191,6 +195,9 @@
             </div>
           </div>
         </div>
+
+
+        <!-------------- END PAGE ------------->
 
         <?php include('inc/footer.php'); ?>
         
