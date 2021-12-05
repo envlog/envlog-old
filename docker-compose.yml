@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+  php:
+    image: php:7.4-apache
+    container_name: php-envlog
+    ports:
+      - 8081:80
+      - 443:443
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - database
+
+  # Database
+  database:
+    image: mysql:5.7
+    container_name: mysql-envlog
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: database
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+
+  # phpmyadmin
+  phpmyadmin:
+    depends_on:
+      - database
+    image: phpmyadmin/phpmyadmin
+    container_name: pma-envlog
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: database
+      MYSQL_ROOT_PASSWORD: admin
+
+volumes:
+  db_data: {}
