@@ -1,9 +1,5 @@
 <?php include('env.php'); ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -16,7 +12,3 @@
   <link rel="stylesheet" href="<?=DOMAIN; ?>css/mdb.free.css" />
   <!-- Custom styles -->
   <link rel="stylesheet" href="<?=DOMAIN ?>css/inc/navbar.css" /> 
-  <link rel="stylesheet" href="<?=DOMAIN ?>css/inc/dashboard.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
-  crossorigin="anonymous"></script>
-</head>
