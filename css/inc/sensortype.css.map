@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"sensortype.css","sourcesContent":[]}
+{"version":3,"sources":["sensortype.scss"],"names":[],"mappings":"AACA,I,CACI,U,CACA,W","file":"sensortype.css","sourcesContent":["//led status ok\r\n.led {\r\n    width: 16px;\r\n    height: 16px;\r\n  }"]}
