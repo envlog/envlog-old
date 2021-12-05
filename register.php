@@ -7,10 +7,8 @@
 
 
   <?php include('inc/head.php'); ?>
-
   <!-- SCRIPT A STILI QUI (in ordine di importanza) -->
-
-  <link rel="stylesheet" href="css/inc/navbar.css" /> 
+  
 </head>
 
 <body class="sidebar bg-light" id="body-pd">
