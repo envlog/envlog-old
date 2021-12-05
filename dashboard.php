@@ -26,6 +26,8 @@
               <h2 class="mx-3">I miei sensori per tipo</h2>
           </div>
           <div class="row row-cols-2 row-cols-lg-4 p-3 g-3" id="sensors-card" style="transform: scale(0.9);">
+
+              <!-- FOR IN PHP CHE CREA LE CARD -->
               <div class="col">
                   <div class="card" data-uid="1234">
                       <div class="card-body">
