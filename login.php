@@ -1,22 +1,17 @@
+<?php include('env.php'); ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Login</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.free.css" />
 
+
+    <?php include('inc/head.php'); ?>
+    
+    <!-- SCRIPT A STILI QUI (in ordine di importanza) -->
     <!-- Firebase Auth UI -->
     <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth__it.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css" />
-
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/inc/login.css" />
 
@@ -25,8 +20,12 @@
 
 <body class="bg-light">
 
-  <!--Main layout-->
-  <main class="my-5 my-md-0 pb-5 pb-md-0">
+
+<!--------- START PAGE ----------->
+
+
+<!--Main layout-->
+<main class="my-5 my-md-0 pb-5 pb-md-0">
 
     <section class="vh-100">
         <div class="container py-5 h-100">
@@ -95,11 +94,15 @@
     </section>
 
 
-    </main>
-    <!--Main layout-->
-    <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    
+</main>
+<!--Main layout-->
+
+
+<!-------------- END PAGE ------------->
+
+    <?php include('inc/footer.php'); ?>
+        
+    <!-- INSERISCI QUI I CUSTOM SCRIPT -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js"></script>

@@ -11,10 +11,7 @@
   
 </head>
 
-<body class="sidebar bg-light" id="body-pd">
-
-        <!-- NAVBAR -->
-        <?php include('inc/navbar.php'); ?>
+<body class="bg-light" id="body-pd">
 
 
 <!--------- START PAGE ----------->
