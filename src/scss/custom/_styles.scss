@@ -12,6 +12,10 @@
   background-color: rgba($black, 0.55);
 }
 
+html {
+  margin-top: -32px;
+}
+
 //rounded cards
 
 .card {
@@ -34,9 +38,12 @@
 
 }
 
+//search in sensortype
+html,body,.intro {
+  height: 35vh;
+}
 
 //backgrounds
-
 .custom-bg-aqua {
   background-image: linear-gradient( #1acfbf, $info);
 }
@@ -48,5 +55,15 @@
 }
 .custom-bg-gold {
   background-image: linear-gradient( moccasin, #Ffcc20);
+}
+
+//media query margini
+@media (min-width: 768px){
+
+  html {
+    margin-left: -32px;
+    margin-top: -16px;
+  }
+
 }
 
