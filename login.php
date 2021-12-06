@@ -45,16 +45,16 @@
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                     <h3>Entra nella tua dashboard</h3>
 
-                    <form method="GET" action="#!" name="loginform" onsubmit="return login();">
+                    <form id="login" name="loginform" onsubmit="login()">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="email" id="email" class="form-control form-control-lg" />
+                            <input type="email" id="email" name="email" class="form-control form-control-lg" />
                             <label class="form-label" for="email">Indirizzo email</label>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-4">
-                            <input type="password" id="pswd" class="form-control form-control-lg" />
+                            <input type="password" id="pswd" name="password" class="form-control form-control-lg" />
                             <label class="form-label" for="pswd">Password</label>
                         </div>
 
@@ -69,7 +69,7 @@
 
 
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="loginbtn">Accedi</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="accedi">Accedi</button>
 
 
                         <div class="divider my-4">

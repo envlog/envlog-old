@@ -89,68 +89,42 @@ var uiConfig = {
 ui.start('#firebaseui-auth-container', uiConfig);
 
 
-function login(){  
-    var name=document.loginform.email.value;  
-    var name=document.loginform.pswd.value;  
-    
+function login() {  
+        var name=document.loginform.email.value;  
+        var pswd=document.loginform.pswd.value;  
+        alert(name);
 
-    if (name==null || name==""){  
-        alert("Email vuoto");  
-        return false;  
-    }else if(pswd==null || pswd==""){  
-        alert("Password vuoto");  
-        return false;  
-    }
-
-    fetch('api.envlog.mitello.io/auth', {
-        method: "POST",
-        headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json;charset=UTF-8",
-        },
-        body: JSON.stringify({
-            email: name,
-            password: name,
-        }),
-    })
-    .then((response) => response.json())
-    .then((data) => {
-            console.log(data);
-            if (data.error) {
-                    alert("Errore Password o Username");
-            } else {
-                window.open("dashboard.html");
+        /**
+            if (name==null || name==""){  
+                alert("Email vuoto");  
+                return false;  
+            }else if(pswd==null || pswd==""){  
+                alert("Password vuoto");  
+                return false;  
             }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+        **/
+
+fetch("https://api.envlog.mitello.xyz/auth/login", {
+  method: "post",
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+
+  //make sure to serialize your JSON body
+  body: JSON.stringify({
+    email: "ciao",
+    password: "password"
+  })
+})
+.then( (response) => { 
+   //do something awesome that makes the world a better place
+   alert(response);
+});
 
 
-    fetch("http://www.html.it").then(response => {
-        if (response.ok) {
-            console.log("Contenuto ricevuto");
-        }
-        if (response.status >= 100 && response.status < 200) {
-            console.log("Informazioni per il client");
-        }
-        if (response.status >= 300 && response.status < 399) {
-            console.log("Redirezione");
-        }
-        if (response.status >= 400 && response.status < 499) {
-            console.log("Richiesta errata");
-        }
-        if (response.status >= 500 && response.status < 599) {
-            console.log("Errore sul server");
-        }
-    }).catch(error => console.log("Si è verificato un errore!"))
-    
-    
-    
-    
-    
-    
-    
-    
 
-}  
+
+
+
+} 
