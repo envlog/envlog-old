@@ -16,7 +16,6 @@ window.addEventListener('load', function () {
     //document.getElementById("account-image").innerHTML = "<img src='" + localStorage.getItem("auth-photoURL") + "'>"
 
 
-
 });
 
 // RESPONSIVE NAVBAR

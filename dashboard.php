@@ -24,30 +24,84 @@
         <!--------- START PAGE ----------->
 
         <!--Main layout-->
-        <main>
+        <main class="container">
           
           <div class="col-12">
-              <h2 class="mx-3">I miei sensori per tipo</h2>
+              <h2 class="mx-3">Sensori in vista</h2>
           </div>
-          <div class="row row-cols-2 row-cols-lg-4 p-3 g-3" id="sensors-card" style="transform: scale(0.9);">
+          <div class="row row-cols-2 row-cols-lg-4 p-3 g-3" id="sensors-card">
 
-              <!-- FOR IN PHP CHE CREA LE CARD -->
-              <div class="col">
-                  <div class="card" data-uid="1234">
-                      <div class="card-body">
-                          <div class="card-text">
-                              <img src="https://img.icons8.com/color/96/000000/water.png" data-image="" class="rounded-circle w-60 p-3 custom-bg-green img-fluid" alt="...">
-                              <div class="text-end">
-                                <h3 class="h2" data-value="">100<span>L</span></h3>
-                                <small class="h6" data-type="">Acqua</small>
+          <?php
+            $url = APIDOMAIN."sensors";
+
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+            $headers = array(
+              "Accept: application/json",
+            );
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+            //for debug only!
+            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+            $resp = curl_exec($curl);
+            curl_close($curl);
+            //var_dump($resp);
+
+            //echo "<pre>";
+            //print_r(json_decode($resp));
+            $resp = json_decode($resp, true);
+            //echo "</pre>";
+
+
+            for ($i = 0; $i < 4; $i++) {
+            
+          ?>
+
+                      <!-- FOR IN PHP CHE CREA LE CARD -->
+                      <div class="col" id="sensors">
+                          <div class="card" id="<?=$resp[$i]["MCU_ID"] ?>" data-uid="<?=$resp[$i]["MCU_ID"] ?>" data-type="<?=$resp[$i]["Type"]; ?>" data-mdb-toggle="modal" data-mdb-target="#detailModal">
+                              
+                              <div class="card-header border-0 d-flex flex-row justify-content-between align-items-center">
+                                    <img src="<?=DOMAIN.'img/'.$resp[$i]["Type"].'.png'; ?>" class="rounded-circle w-60 p-3 custom-bg-green img-fluid" alt="<?=$resp[$i]["Type"];  ?>">
+                                    <h3 class="h2">100<span>L</span></h3>
                               </div>
+
+                              <div class="card-body">
+                                  <div class="card-text">
+                                      
+                                      <div class="">
+                                        <small class="h6" data-type="">Sensore di <?=$resp[$i]["Type"]; ?></small>
+                                        <p>
+                                          <?php echo "Nome: ".$resp[$i]["Name"]; ?>
+                                        </p>
+                                      </div>
+
+                                  </div>
+                              </div>
+
+                              <div class="card-footer text-start border-0">
+                                    <?php if ($resp[$i]["Enabled"]): ?>
+                                        <div class="btn btn-outline-success btn-sm btn-rounded" disabled style="cursor: default;"> Attivato </div>
+                                    <? else: ?>
+                                      <div class="btn btn-outline-danger btn-sm btn-rounded" disabled style="cursor: default;"> Disattivato </div>
+                                    <?php endif; ?>
+                              </div>
+
                           </div>
                       </div>
-                  </div>
-              </div>
 
+
+
+              <?php } ?>
+
+
+
+<!--- NON TOCCARE
               <div class="col">
-                  <div class="card" data-uid="1234">
+                  <div class="card" data-uid="346457">
                       <div class="card-body">
                           <div class="card-text">
                               <img src="https://img.icons8.com/color/96/000000/pressure.png" data-image="" class="rounded-circle w-60 p-3 custom-bg-coral" alt="...">
@@ -87,8 +141,12 @@
                       </div>
                   </div>
               </div>
+--->
+
 
           </div>
+
+         
 
           
           <div class="col container-fluid mb-5" id="weather">
@@ -150,51 +208,6 @@
         </main>
         <!--Main layout-->
 
-        <!-- Modal -->
-        <div class="modal bottom fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true" data-mdb-backdrop="static" data-mdb-keyboard="true">
-          <div class="modal-dialog-scrollable modal-frame modal-bottom modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Temperatura</h5>
-                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-              </div> 
-              <div class="modal-body">
-                <div class="row">
-                  <div class="col-12">
-                    <section class="mb-4">
-                      <div class="card">
-                        <div class="card-header py-3">
-                          <h5 class="mb-0 text-center"><strong>Temperatura media giornaliera</strong></h5>
-                        </div>
-                        <div class="card-body">
-                          <canvas class="my-4 w-100" id="myChart" height="80px"></canvas>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                  <hr>
-                  <div class="col-12">
-                    <section class="mb-4">
-                      <div class="card">
-                        <div class="card-header py-3">
-                          <h5 class="mb-0 text-center"><strong>Temperatura media settimanale</strong></h5>
-                        </div>
-                        <div class="card-body">
-                          <canvas class="my-4 w-100" id="myChart1" height="80px"></canvas>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-                  Chiudi
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
 
 
         <!-------------- END PAGE ------------->

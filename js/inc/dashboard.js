@@ -39,8 +39,6 @@ function getGPS(callback) {
 
 }
 
-
-
 function getLocation(callback) {
 
   if (navigator.geolocation) {
@@ -87,7 +85,6 @@ function getLocation(callback) {
     alert("Geolocation is not supported by this browser.");
   }
 }
-
 
 function setForecast(geolat, geolon) {
 
@@ -199,7 +196,6 @@ function setForecast(geolat, geolon) {
       }
     });
 }
-
 
 function forecast() {
 
@@ -349,9 +345,55 @@ function forecast() {
 
 */
 
+
+function apionmodal() {
+  const myModalEl = document.getElementById('detailModal')
+  myModalEl.addEventListener('show.mdb.modal', (event) => {
+
+
+    console.log(event.relatedTarget.dataset.uid);
+    const recipient = button.getAttribute('data-mdb-whatever')
+
+    try {
+      const response = fetch('https://api.envlog.mitello.xyz/sensors/' + event.relatedTarget.dataset.uid + '/' + event.relatedTarget.dataset.type, {
+        method: "GET",
+        headers: {
+          Accept: "application/json, text/plain",
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        }
+      });
+      const json = response.json();
+      if (json.errors) {
+        // Blocco gestione errori
+        console.log(json.errors);
+      } else {
+        // Blocco per HTTP 200 (richiesta andata a buon fine)
+        console.log(json);
+
+      }
+    } catch (fetchError) {
+      console.log(fetchError);
+    }
+    return false;
+
+
+
+
+
+  })
+}
+
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   forecast();
   //geotocity()
+
+  apionmodal();
 });
 
 
