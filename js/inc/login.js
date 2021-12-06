@@ -88,43 +88,85 @@ var uiConfig = {
 
 ui.start('#firebaseui-auth-container', uiConfig);
 
+/** 
+        async function login() {
+            var name = document.loginform.email.value;
+            var pswd = document.loginform.pswd.value;
 
-function login() {  
-        var name=document.loginform.email.value;  
-        var pswd=document.loginform.pswd.value;  
-        alert(name);
-
-        /**
-            if (name==null || name==""){  
-                alert("Email vuoto");  
-                return false;  
-            }else if(pswd==null || pswd==""){  
-                alert("Password vuoto");  
-                return false;  
+            if (name == null || name == "") {
+                alert("Email vuoto");
+                return false;
+            } else if (pswd == null || pswd == "") {
+                alert("Password vuoto");
+                return false;
             }
-        **/
-
-fetch("https://api.envlog.mitello.xyz/auth/login", {
-  method: "post",
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  },
-
-  //make sure to serialize your JSON body
-  body: JSON.stringify({
-    email: "ciao",
-    password: "password"
-  })
-})
-.then( (response) => { 
-   //do something awesome that makes the world a better place
-   alert(response);
-});
 
 
 
+            var email = document.loginform.email.value;
+            var password = document.loginform.pswd.value;
+
+            try {
+                const response = await fetch('https://api.envlog.mitello.xyz/auth/login', {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json, text/plain",
+                        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+                    },
+                    body: `email=${email}&password=${password}`
+                });
+                const json = await response.json();
+                if (json.errors) {
+                    // Blocco gestione errori
+                    console.log(json.errors);
+                } else {
+                    // Blocco per HTTP 200 (richiesta andata a buon fine)
+                    console.log(json);
+                }
+            } catch (fetchError) {
+                console.log(fetchError);
+            }
+
+        } 
+
+*/
+async function login() {
+    var email = document.loginform.email.value;
+    var password = document.loginform.pswd.value;
+
+    try {
+        const response = await fetch('https://api.envlog.mitello.xyz/auth/login', {
+            method: "POST",
+            headers: {
+                Accept: "application/json, text/plain",
+                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: `email=${email}&password=${password}`
+        });
+        const json = await response.json();
+        if (json.errors) {
+            // Blocco gestione errori
+            console.log(json.errors);
+        } else {
+            // Blocco per HTTP 200 (richiesta andata a buon fine)
+            console.log(json);
 
 
+            let photourl = "https://dummyimage.com/512/ff7f7f/FFFFFF.png&text=" + json.username.charAt(0).toUpperCase();
 
-} 
+            localStorage.setItem("auth-provider", "envlogauth");
+            localStorage.setItem("auth-uid", Math.random().toString(36).slice(2));
+            localStorage.setItem("auth-displayName", json.username);
+            localStorage.setItem("auth-email", json.email);
+            localStorage.setItem("auth-photoURL", photourl);
+
+            localStorage.setItem("isAdmin", json.isAdmin);
+
+            location.href = "/dashboard.php";
+
+        }
+    } catch (fetchError) {
+        console.log(fetchError);
+    }
+    return false;
+}

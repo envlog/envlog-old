@@ -45,7 +45,7 @@
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                     <h3>Entra nella tua dashboard</h3>
 
-                    <form id="login" name="loginform" onsubmit="login()">
+                    <form method="POST" id="login" name="loginform" onsubmit="login(); return false;">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                             <input type="email" id="email" name="email" class="form-control form-control-lg" />
