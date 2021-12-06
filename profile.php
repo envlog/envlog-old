@@ -30,15 +30,6 @@
 
       <section>
         <div class="container py-5">
-          <div class="row">
-            <div class="col">
-              <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-                <ol class="breadcrumb mb-0">
-                  <li class="breadcrumb-item active" aria-current="page">Profilo Utente</li>
-                </ol>
-              </nav>
-            </div>
-          </div>
       
           <div class="row">
             <div class="col-lg-4">
@@ -137,7 +128,21 @@
                 </div>
               </div>
 
-              <div class="card" style="margin-top: 80px;">
+              <div class="card" style="margin-top: 20px;">
+                <div class="card-body rounded-2">
+                  <div class="row">
+                    <div class="col-5 col-md-6 d-inline-flex align-items-center">
+                      <i class="fas fa-fw fa-sign-out-alt"></i>
+                      <p class="mx-3 mb-0">Esci</p>
+                    </div>
+                    <div class="col-7 col-md-6 ">
+                      <button class="btn btn-link text-danger">Esci</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" style="margin-top: 20px;">
                 <div class="card-body rounded-2">
                   <div class="row">
                     <div class="col-5 col-md-6 d-inline-flex align-items-center">
@@ -148,11 +153,6 @@
                       <button class="btn btn btn-danger"><i class="fas fa-fw fa-trash"></i> Elimina</button>
                     </div>
                   </div>
-              
-                  
-                 
-                  
-                 
                 </div>
               </div>
 
