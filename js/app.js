@@ -2,7 +2,7 @@
 //GET AUTH DATA
 window.addEventListener('load', function () {
 
-    var element = document.querySelector('#avatar .nav_name span');
+
     if (localStorage.getItem("auth-displayName")) {
         document.querySelector('#avatar img.nav_icon').src = localStorage.getItem("auth-photoURL");
         document.querySelector('#avatar .nav_name span').textContent = localStorage.getItem("auth-displayName").split(" ")[0];

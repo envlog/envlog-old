@@ -151,16 +151,15 @@ async function login() {
             // Blocco per HTTP 200 (richiesta andata a buon fine)
             console.log(json);
 
-
             let photourl = "https://dummyimage.com/512/ff7f7f/FFFFFF.png&text=" + json.username.charAt(0).toUpperCase();
 
             localStorage.setItem("auth-provider", "envlogauth");
             localStorage.setItem("auth-uid", Math.random().toString(36).slice(2));
             localStorage.setItem("auth-displayName", json.username);
             localStorage.setItem("auth-email", json.email);
-            localStorage.setItem("auth-photoURL", photourl);
 
-            localStorage.setItem("isAdmin", json.isAdmin);
+            sessionStorage.setItem("auth-photoURL", photourl);
+            sessionStorage.setItem("isAdmin", json.isAdmin);
 
             location.href = "/dashboard.php";
 
