@@ -17,12 +17,24 @@
 <!--------- START PAGE ----------->
 
     <!--Main layout-->
-    <main class="mb-5">
-        <h1 class="text-center">Scegli il tipo di sensore da installare</h1>   
-        <div class="row row-cols-1 row-cols-12 p-3 g-3" id="sensors-card" style="transform: scale(0.9);">
+    <main class="mb-5 container">
+        <p class="h3 mb-3">Scegli il tipo di sensore da installare</p>   
+        <div class="row row-cols-1 row-cols-12 g-3" id="sensors-card">
               <div class="col-md-6 col-12" >
+
+                <div class="card my-3" data-sensor-uid="1234" data-sensor-type="Acqua" data-mdb-toggle="modal" data-mdb-target="#addSensorModal">
+                    <div class="card-body d-flex flex-row justify-content-around align-items-center">
+                        <img src="https://img.icons8.com/color/96/000000/water.png" class="img-fluid" />
+                        <h5 class="card-title">Temperatura</h5>
+                        <button type="button" class="btn btn-outline-primary btn-link border-0"> <i class="fas fa-2x fa-angle-right"></i> </button>
+                    </div>
+                </div>
+
+
+
+
                   <div class="card border border-primary" data-sensor-uid="1234" data-sensor-type="Acqua" data-mdb-toggle="modal" data-mdb-target="#addSensorModal">
-                        <div class="card-body">
+                        <div class="card-body ">
                             <div class="card-text">
                                 <div class="row align-items-center">
                                     <div class="col-md-5 col-sm-7">

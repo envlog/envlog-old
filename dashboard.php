@@ -62,10 +62,16 @@
 
                       <!-- FOR IN PHP CHE CREA LE CARD -->
                       <div class="col" id="sensors">
-                          <div class="card" data-mcu="<?=$resp[$i]["MCU_ID"].'_'.$resp[$i]["Type"] ?>" data-uid="<?=$resp[$i]["MCU_ID"] ?>" data-type="<?=$resp[$i]["Type"]; ?>">
+                          <div class="card  overflow-hidden" data-mcu="<?=$resp[$i]["MCU_ID"].'_'.$resp[$i]["Type"] ?>" data-uid="<?=$resp[$i]["MCU_ID"] ?>" data-type="<?=$resp[$i]["Type"]; ?>">
                               
                               <div class="card-header border-0 d-flex flex-row justify-content-between align-items-center">
-                                    <img src="<?=DOMAIN.'img/'.$resp[$i]["Type"].'.png'; ?>" class="rounded-circle w-60 p-3 custom-bg-green img-fluid" alt="<?=$resp[$i]["Type"];  ?>">
+                                    <div class="blob">
+                                        <!-- This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
+                                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                          <path fill="#30a853" d="M51.5,-50.8C64.8,-38.2,72.2,-19.1,69.1,-3.1C65.9,12.9,52.3,25.7,39,37.4C25.7,49.1,12.9,59.5,0.1,59.4C-12.6,59.3,-25.2,48.6,-37.3,36.9C-49.4,25.2,-60.9,12.6,-62.4,-1.5C-63.8,-15.5,-55.2,-31.1,-43.1,-43.6C-31.1,-56.1,-15.5,-65.6,1.8,-67.4C19.1,-69.2,38.2,-63.3,51.5,-50.8Z" transform="translate(100 100)" />
+                                        </svg>
+                                    </div>
+                                    <img src="<?=DOMAIN.'img/'.$resp[$i]["Type"].'.png'; ?>" class="position-relative" alt="<?=$resp[$i]["Type"];  ?>">
                                     <div class="datalive"><span class="h2 value">--- </span><span class="unit">-</span></div>
                               </div>
 
@@ -74,9 +80,9 @@
                                       
                                       <div class="">
                                         <small class="h6" data-type="">Sensore di <?=$resp[$i]["Type"]; ?></small>
-                                        <p>
-                                          <?php echo "Nome: ".$resp[$i]["Name"]; ?>
-                                        </p>
+                                        <span>
+                                          <?=$resp[$i]["Name"]; ?>
+                                        </span>
                                       </div>
 
                                   </div>
@@ -96,6 +102,42 @@
 
 
               <?php } ?>
+
+
+                      <div class="col" id="sensors">
+                          <div class="card overflow-hidden" data-mcu="2457427247_temp" data-uid="2457427247" data-type="temp">
+                              
+                              <div class="card-header border-0 d-flex flex-row justify-content-between align-items-center">
+                                    <div class="blob">
+                                        <!-- This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
+                                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                          <path fill="#30a853" d="M51.5,-50.8C64.8,-38.2,72.2,-19.1,69.1,-3.1C65.9,12.9,52.3,25.7,39,37.4C25.7,49.1,12.9,59.5,0.1,59.4C-12.6,59.3,-25.2,48.6,-37.3,36.9C-49.4,25.2,-60.9,12.6,-62.4,-1.5C-63.8,-15.5,-55.2,-31.1,-43.1,-43.6C-31.1,-56.1,-15.5,-65.6,1.8,-67.4C19.1,-69.2,38.2,-63.3,51.5,-50.8Z" transform="translate(100 100)" />
+                                        </svg>
+                                    </div>
+                                    <img src="<?=DOMAIN ?>/img/Temperature.png" class="position-relative" alt="temp">
+                                    <div class="datalive"><span class="h2 value">--- </span><span class="unit">-</span></div>
+                              </div>
+
+                              <div class="card-body">
+                                  <div class="card-text">
+                                      
+                                      <div class="">
+                                        <small class="h6" data-type="">Sensore di temp</small>
+                                        <p>
+                                          Nome: hthrftht"
+                                        </p>
+                                      </div>
+
+                                  </div>
+                              </div>
+
+                              <div class="card-footer text-start border-0">
+                                        <div class="btn btn-outline-success btn-sm btn-rounded" disabled style="cursor: default;"> Attivato </div>
+                              </div>
+
+                          </div>
+                      </div>
+
 
 
 
