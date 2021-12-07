@@ -369,7 +369,7 @@ function apionmodal() {
       } else {
         // Blocco per HTTP 200 (richiesta andata a buon fine)
         console.log(json);
-
+        
       }
     } catch (fetchError) {
       console.log(fetchError);
@@ -382,8 +382,6 @@ function apionmodal() {
 
   })
 }
-
-
 
 
 

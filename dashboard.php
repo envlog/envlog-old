@@ -62,11 +62,11 @@
 
                       <!-- FOR IN PHP CHE CREA LE CARD -->
                       <div class="col" id="sensors">
-                          <div class="card" id="<?=$resp[$i]["MCU_ID"] ?>" data-uid="<?=$resp[$i]["MCU_ID"] ?>" data-type="<?=$resp[$i]["Type"]; ?>" data-mdb-toggle="modal" data-mdb-target="#detailModal">
+                          <div class="card" data-mcu="<?=$resp[$i]["MCU_ID"].'_'.$resp[$i]["Type"] ?>" data-uid="<?=$resp[$i]["MCU_ID"] ?>" data-type="<?=$resp[$i]["Type"]; ?>">
                               
                               <div class="card-header border-0 d-flex flex-row justify-content-between align-items-center">
                                     <img src="<?=DOMAIN.'img/'.$resp[$i]["Type"].'.png'; ?>" class="rounded-circle w-60 p-3 custom-bg-green img-fluid" alt="<?=$resp[$i]["Type"];  ?>">
-                                    <h3 class="h2">100<span>L</span></h3>
+                                    <div class="datalive"><span class="h2 value">--- </span><span class="unit">-</span></div>
                               </div>
 
                               <div class="card-body">
@@ -208,7 +208,7 @@
         </main>
         <!--Main layout-->
 
-
+        <div id="detailModal"></div>
 
         <!-------------- END PAGE ------------->
 
@@ -217,6 +217,20 @@
         <!-- INSERISCI QUI I CUSTOM SCRIPT -->
         <script type="text/javascript" src="<?=DOMAIN ?>js/inc/dashboard.js"></script>
 
+
+        <script src="js/socket.io.min.js"></script>
+        <script>
+            const socket = io("http://ws.envlog.mitello.xyz", { transports: ['websocket'] });
+            socket.on('connect', () => console.log("Connected"));
+            socket.on('disconnect', () => console.error("Lost connection to server!"));
+
+            socket.on('data', (data) => {
+                //alert(data);
+                const sensor = JSON.parse(data);
+                 document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .datalive .value').innerHTML = sensor.Value;
+                 document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .unit').innerHTML = " "+sensor.Unit;
+            });
+        </script>
 
 </body>
 
