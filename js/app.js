@@ -56,6 +56,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
     linkColor.forEach(l => l.addEventListener('click', colorLink));
 
 
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('../sw.js').then(function(registration) {
+    console.log('ServiceWorker registration successful!');
+  }).catch(function(err) {
+    console.log('ServiceWorker registration failed: ', err);
+  });
+}
+
+
+
 });
 
 
@@ -90,6 +101,5 @@ function geotocity(geolat, geolon) {
         });
 
 }
-
 
 
