@@ -35,28 +35,28 @@
                         <div class="mb-4">
                             <h3>Registrati</h3>
                         </div>
-                        <form>
+                        <form method="POST" name="registerform" onsubmit="register(); return false;">
                             <!-- Username input-->
                             <div class="form-outline mb-4">
-                                <input type="text" id="username" class="form-control form-control-lg" />
+                                <input type="text" name="username" id="username" class="form-control form-control-lg" />
                                 <label class="form-label" for="text">Username</label>
                             </div>
 
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                                <input type="email" id="email" class="form-control form-control-lg" />
+                                <input type="email" name="email" id="email" class="form-control form-control-lg" />
                                 <label class="form-label" for="email">Indirizzo email</label>
                             </div>
 
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                                <input type="password" id="pswd" class="form-control form-control-lg" />
+                                <input type="password" name="pswd" id="pswd" class="form-control form-control-lg" />
                                 <label class="form-label" for="pswd">Password</label>
                             </div>
 
                             <!-- Confirm password input -->
                             <div class="form-outline mb-4">
-                                <input type="password" id="checkpswd" class="form-control form-control-lg" />
+                                <input type="password" name="checkpswd" id="checkpswd" class="form-control form-control-lg" />
                                 <label class="form-label" for="checkpswd">Conferma password</label>
                             </div>
 
@@ -64,7 +64,7 @@
                             <button type="submit" class="btn btn-primary btn-lg btn-block" id=loginbtn>Registrati</button>
 
                             <span class="d-flex align-items-center mb-3 mt-3 font-weight-bold">
-                                Hai già un account? <a href="login.html" class="px-2"> Accedi</a>
+                                Hai già un account? <a href="login.php" class="px-2"> Accedi</a>
                             </span>
                         </form>
                     </div>
