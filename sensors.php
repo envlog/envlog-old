@@ -204,7 +204,7 @@
         <!-- INSERISCI QUI I CUSTOM SCRIPT -->
         <!-- Custom scripts -->
 
-        <script type="text/javascript" src="<?=DOMAIN ?>js/inc/dashboard.js"></script>
+        <script type="text/javascript" src="<?=DOMAIN ?>js/inc/sensors.js"></script>
 
 
         <script src="js/socket.io.min.js"></script>
