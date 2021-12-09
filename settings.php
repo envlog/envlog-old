@@ -49,7 +49,7 @@
             <div class="tab-content p-5" id="v-tabs-tabContent">
 
               <div class="tab-pane fade show active"  id="v-tabs-home" role="tabpanel" aria-labelledby="v-tabs-home-tab" >
-                <h5>IL TUO PROFILO</h5>
+                <h5>MODIFICA IL TUO PROFILO</h5>
                 <hr>
                 <form>
                   <div class="form-group">
@@ -80,7 +80,7 @@
                   <hr>
                   <div class="form-group">
                     <label class="d-block text-danger">Elimina Account</label>
-                    <p class="text-muted font-size-sm">Una volta eliminato l'account, non puoi recuperare i dati.</p>
+                    <p class="text-muted font-size-sm">Una volta eliminato l'account, non potrai recuperare i dati.</p>
                   </div>
                   <button class="btn btn-danger" type="button">Elimina Account</button>
                 </form>
@@ -156,7 +156,7 @@
                   </div>
                   <div class="form-group mt-5">
                     <label class="d-block mt-5">Storico pagamenti</label>
-                    <div class="border border-gray-500 bg-gray-200 p-3 text-center font-size-sm">Non hai ancora fatto nessun pagamento.</div>
+                    <div class="border border-gray-500 bg-gray-200 p-3 text-center font-size-sm">Non hai ancora effettuato nessun pagamento.</div>
                   </div>
                 </form>
 
