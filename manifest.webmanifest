@@ -3,7 +3,7 @@
     "background_color": "#ffffff",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/dashboard.php",
+    "start_url": "/login.php",
     "short_name": "envlog",
     "name": "envlog",
     "icons": [
