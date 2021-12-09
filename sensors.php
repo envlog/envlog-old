@@ -26,11 +26,12 @@
             
             <div class="filters">
                 <span>Filtra per: </span>
-                <span class="filter-option badge rounded-pill bg-primary"data-filter="*" onclick=filterSensor(event)>Tutti</span>
-                <span class="filter-option badge rounded-pill bg-primary"data-filter="Pressure" onclick=filterSensor(event)>Pressione</span>
-                <span class="filter-option badge rounded-pill bg-primary"data-filter="Temperature" onclick=filterSensor(event)>Temperatura</span>
-                <span class="filter-option badge rounded-pill bg-primary"data-filter="Altro" onclick=filterSensor(event) disabled>Altro</span>
+                <span class="filter-option badge rounded-pill bg-primary" data-filter="*" onclick=filterSensor(event)>Tutti</span>
+                <span class="filter-option badge rounded-pill bg-primary" data-filter="Pressure" onclick=filterSensor(event)>Pressione</span>
+                <span class="filter-option badge rounded-pill bg-primary" data-filter="Temperature" onclick=filterSensor(event)>Temperatura</span>
+                <span class="filter-option badge rounded-pill bg-primary" data-filter="Altro" onclick=filterSensor(event) disabled>Altro</span>
             </div>
+
             <script>
                 function filterSensor(e) {
                     const sensor = document.querySelectorAll("#sensors-card .sensori"); // select all animal divs
@@ -81,12 +82,18 @@
                 ?>
 
                       <!-- FOR IN PHP CHE CREA LE CARD -->
-                      <div class="col sensori <?=$resp[$i]["Type"]; ?>">
-                          <div class="card" id="<?=$resp[$i]["MCU_ID"] ?>" data-uid="<?=$resp[$i]["MCU_ID"] ?>" data-type="<?=$resp[$i]["Type"]; ?>" data-mdb-toggle="modal" data-mdb-target="#detailModal">
+                      <div class="col-12 col-md-6 sensori <?=$resp[$i]["Type"]; ?>" id="sensors" data-filter="green">
+                          <div class="card  overflow-hidden" data-mcu="<?=$resp[$i]["MCU_ID"].'_'.$resp[$i]["Type"] ?>" data-uid="<?=$resp[$i]["MCU_ID"] ?>" data-type="<?=$resp[$i]["Type"]; ?>" data-mdb-toggle="modal" data-mdb-target="#detailModal">
                               
                               <div class="card-header border-0 d-flex flex-row justify-content-between align-items-center">
-                                    <img src="<?=DOMAIN.'img/'.$resp[$i]["Type"].'.png'; ?>" class="rounded-circle w-60 p-3 custom-bg-green img-fluid" alt="<?=$resp[$i]["Type"];  ?>">
-                                    <h3 class="h2">100<span>L</span></h3>
+                                    <div class="blob shape<?=$i ?>">
+                                        <!-- This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
+                                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M66.9,-24.7C73.2,-2.2,55.6,25.1,30.9,43.3C6.1,61.4,-25.8,70.4,-46.4,57.1C-66.9,43.7,-76.1,8,-66.4,-19C-56.8,-46,-28.4,-64.4,0.9,-64.7C30.3,-65,60.5,-47.2,66.9,-24.7Z" transform="translate(100 100)" />
+                                        </svg>
+                                    </div>
+                                    <img src="<?=DOMAIN.'img/'.$resp[$i]["Type"].'.png'; ?>" class="position-relative" alt="<?=$resp[$i]["Type"];  ?>">
+                                    <div class="datalive"><span class="h2 value">--- </span><span class="unit">-</span></div>
                               </div>
 
                               <div class="card-body">
@@ -95,7 +102,7 @@
                                       <div class="">
                                         <small class="h6" data-type="">Sensore di <?=$resp[$i]["Type"]; ?></small>
                                         <p>
-                                          <?php echo "Nome: ".$resp[$i]["Name"]; ?>
+                                          <?=$resp[$i]["Name"]; ?>
                                         </p>
                                       </div>
 
