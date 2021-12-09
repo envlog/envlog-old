@@ -29,7 +29,9 @@
                 <span class="filter-option badge rounded-pill bg-primary" data-filter="*" onclick=filterSensor(event)>Tutti</span>
                 <span class="filter-option badge rounded-pill bg-primary" data-filter="Pressure" onclick=filterSensor(event)>Pressione</span>
                 <span class="filter-option badge rounded-pill bg-primary" data-filter="Temperature" onclick=filterSensor(event)>Temperatura</span>
-                <span class="filter-option badge rounded-pill bg-primary" data-filter="Altro" onclick=filterSensor(event) disabled>Altro</span>
+                <span class="filter-option badge rounded-pill bg-primary" data-filter="Brightness" onclick=filterSensor(event)>Luminosità</span>
+                <span class="filter-option badge rounded-pill bg-primary" data-filter="Anemometer" onclick=filterSensor(event)>Anemometro</span>
+                <span class="filter-option badge rounded-pill bg-primary" data-filter="Infrared" onclick=filterSensor(event)>Infrarossi</span>
             </div>
 
             <script>
