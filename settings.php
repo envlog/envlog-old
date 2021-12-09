@@ -114,27 +114,25 @@
                     </div>
                   </div>
                   <div class="form-group mt-5">
-                    <label class="d-block mb-3">NOTIFICHE SMS</label>
+                    <label class="d-block mb-3">Notifiche push</label>
                     <ul class="list-group list-group-sm">
                       <li class="list-group-item has-icon">
-                        Soglie d'allarme
+                        
                         <div class="custom-control custom-control-nolabel custom-switch ml-auto">
-                          <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                          <label class="custom-control-label" for="customSwitch1"></label>
+                          <input type="checkbox" class="custom-control-input" id="customSwitch1"> 
+                          <label class="custom-control-label" for="customSwitch1">Notificami quando un sensore supera il range</label>
                         </div>
                       </li>
                       <li class="list-group-item has-icon">
-                        ecc
                         <div class="custom-control custom-control-nolabel custom-switch ml-auto">
                           <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                          <label class="custom-control-label" for="customSwitch1"></label>
+                          <label class="custom-control-label" for="customSwitch1">Notificami gli accessi alla piattaforma</label>
                         </div>
                       </li>
                       <li class="list-group-item has-icon">
-                        ecc
                         <div class="custom-control custom-control-nolabel custom-switch ml-auto">
                           <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                          <label class="custom-control-label" for="customSwitch1"></label>
+                          <label class="custom-control-label" for="customSwitch1">Notificami quando un sensore viene aggiunto</label>
                         </div>
                       </li>
                     </ul>
