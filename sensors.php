@@ -204,6 +204,28 @@
         <!-- INSERISCI QUI I CUSTOM SCRIPT -->
         <!-- Custom scripts -->
 
+        <script type="text/javascript" src="<?=DOMAIN ?>js/inc/dashboard.js"></script>
+
+
+        <script src="js/socket.io.min.js"></script>
+        <script>
+            const socket = io("http://ws.envlog.mitello.xyz", { transports: ['websocket'] });
+            socket.on('connect', () => console.log("Connected"));
+            socket.on('disconnect', () => console.error("Lost connection to server!"));
+
+            socket.on('data', (data) => {
+                //alert(data);
+                const sensor = JSON.parse(data);
+                
+
+                const valueContainer = document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .datalive .value');
+                const unitContainer = document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .unit');
+                if (valueContainer) valueContainer.innerHTML = sensor.Value;
+                if (unitContainer) unitContainer.innerHTML = " "+sensor.Unit;
+                 
+            });
+        </script>
+
 </body>
 
 </html>
