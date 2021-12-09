@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
 
 
     if (localStorage.getItem("auth-displayName")) {
-        document.querySelector('#avatar img.nav_icon').src = localStorage.getItem("auth-photoURL");
+        document.querySelector('#avatar img.nav_icon').src = sessionStorage.getItem("auth-photoURL");
         document.querySelector('#avatar .nav_name span').textContent = localStorage.getItem("auth-displayName").split(" ")[0];
     }
     //if (typeof (element) != 'undefined' && element != null) {
