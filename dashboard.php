@@ -280,7 +280,7 @@
             socket.on('data', (data) => {
                 //alert(data);
                 const sensor = JSON.parse(data);
-                alert(data)
+                
 
                 if(document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"]')){
                       document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .datalive .value').innerHTML = sensor.Value;
