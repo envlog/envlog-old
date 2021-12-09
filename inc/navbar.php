@@ -41,27 +41,22 @@
                             <a href="/dashboard.php" class="nav_link active">
                               <i class="fas fa-home nav_icon"></i> 
                               <span class="nav_name">Dashboard</span> 
-                            </a> 
-                            <a href="/graph.php" class="nav_link"> 
-                              <i class="fas fa-chart-area nav_icon"></i> 
-                              <span class="nav_name">Grafici</span> 
-                            </a> 
-                            <a href="#" class="nav_link"> 
-                              <i class="fas fa-bullseye nav_icon"></i> 
-                              <span class="nav_name">Storici</span> 
-                            </a> 
-                            <a href="#" class="nav_link"> 
-                              <i class="fas fa-bullseye nav_icon"></i> 
-                              <span class="nav_name">Altro</span> 
-                            </a> 
+                            </a>
                             <a href="/sensors.php" class="nav_link"> 
                               <i class="fas fa-microchip nav_icon"></i> 
                               <span class="nav_name">Sensori</span> 
-                            </a> 
+                            </a>
+                            
+                            <a href="/profile.php" class="nav_link"> 
+                              <i class="fas fa-user-circle nav_icon"></i>
+                              <span class="nav_name">Profilo</span> 
+                            </a>
                             <a href="/settings.php" class="nav_link"> 
                               <i class="fas fa-cog nav_icon"></i> 
                               <span class="nav_name">Impostazioni</span> 
-                            </a> 
+                            </a>
+
+
                           </div>
                       </div> 
                       <a href="/profile.php" id="avatar" class="nav_link"> 
