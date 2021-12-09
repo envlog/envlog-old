@@ -282,10 +282,10 @@
                 const sensor = JSON.parse(data);
                 
 
-                if(document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"]')){
-                      document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .datalive .value').innerHTML = sensor.Value;
-                      document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .unit').innerHTML = " "+sensor.Unit;
-                }
+                const valueContainer = document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .datalive .value');
+                const unitContainer = document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .unit');
+                if (valueContainer) valueContainer.innerHTML = sensor.Value;
+                if (unitContainer) unitContainer.innerHTML = " "+sensor.Unit;
                  
             });
         </script>
