@@ -4,7 +4,7 @@
 <html lang="it">
 
 <head>
-
+  <meta http-equiv="refresh" content="0;url=/dashboard.php" />
 
   <?php include('inc/head.php'); ?>
 
