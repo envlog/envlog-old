@@ -88,6 +88,19 @@
   }
 }
 
+.animation00 {
+  animation: shape00 10s ease-in-out infinite;
+}
+.animation01 {
+  animation: shape01 10s ease-in-out infinite;
+}
+.animation02 {
+  animation: shape02 10s ease-in-out infinite;
+}
+.animation03 {
+  animation: shape03 10s ease-in-out infinite;
+}
+
 @keyframes shape00 {
   0%   { transform: scale(0.6); }
   38%  { transform: scale(0.8, 1); }
@@ -114,7 +127,7 @@
   100% { transform: scale(0.6); }
 }
 
-@keyframes shape04 {
+@keyframes shape03 {
   0%   { transform: scale(0.8) rotate(45deg); -webkit-transform: scale(0.8) rotate(45deg); -moz-transform: scale(0.8) rotate(45deg); -ms-transform: scale(0.8) rotate(45deg); -o-transform: scale(0.8) rotate(45deg); }
   40%  { transform: rotate(270deg); -webkit-transform: rotate(270deg); -moz-transform: rotate(270deg); -ms-transform: rotate(270deg); -o-transform: rotate(270deg); }
   78%  { transform: scale(1); }

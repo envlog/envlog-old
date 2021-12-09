@@ -121,8 +121,8 @@
           const text = await blob.text();
           //console.log("fetch: "+text)
           document.querySelector(".blob.shape"+iterator).innerHTML = text;
-          document.querySelector(".blob.shape"+iterator+" svg").style.animation = "shape0"+iterator+" 10s ease-in-out infinite;";
-          document.querySelector(".blob.shape"+iterator+" svg").style.fill = '#000';
+          document.querySelector(".blob.shape"+iterator+" svg").classList.add("animation0"+iterator);
+          //document.querySelector(".blob.shape"+iterator+" svg").style.fill = '#000';
       }
 
 
