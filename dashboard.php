@@ -58,17 +58,17 @@
 
             for ($i = 0; $i < 4; $i++) {
             
-          ?>
+              if($resp[$i]["Enabled"]): ?>
 
                       <!-- FOR IN PHP CHE CREA LE CARD -->
-                      <div class="col" id="sensors">
+                      <div class="col-12 col-md-6" id="sensors">
                           <div class="card  overflow-hidden" data-mcu="<?=$resp[$i]["MCU_ID"].'_'.$resp[$i]["Type"] ?>" data-uid="<?=$resp[$i]["MCU_ID"] ?>" data-type="<?=$resp[$i]["Type"]; ?>">
                               
                               <div class="card-header border-0 d-flex flex-row justify-content-between align-items-center">
-                                    <div class="blob">
+                                    <div class="blob shape<?=$i ?>">
                                         <!-- This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
                                         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                          <path fill="#30a853" d="M51.5,-50.8C64.8,-38.2,72.2,-19.1,69.1,-3.1C65.9,12.9,52.3,25.7,39,37.4C25.7,49.1,12.9,59.5,0.1,59.4C-12.6,59.3,-25.2,48.6,-37.3,36.9C-49.4,25.2,-60.9,12.6,-62.4,-1.5C-63.8,-15.5,-55.2,-31.1,-43.1,-43.6C-31.1,-56.1,-15.5,-65.6,1.8,-67.4C19.1,-69.2,38.2,-63.3,51.5,-50.8Z" transform="translate(100 100)" />
+                                          <path d="M66.9,-24.7C73.2,-2.2,55.6,25.1,30.9,43.3C6.1,61.4,-25.8,70.4,-46.4,57.1C-66.9,43.7,-76.1,8,-66.4,-19C-56.8,-46,-28.4,-64.4,0.9,-64.7C30.3,-65,60.5,-47.2,66.9,-24.7Z" transform="translate(100 100)" />
                                         </svg>
                                     </div>
                                     <img src="<?=DOMAIN.'img/'.$resp[$i]["Type"].'.png'; ?>" class="position-relative" alt="<?=$resp[$i]["Type"];  ?>">
@@ -80,9 +80,9 @@
                                       
                                       <div class="">
                                         <small class="h6" data-type="">Sensore di <?=$resp[$i]["Type"]; ?></small>
-                                        <span>
+                                        <p>
                                           <?=$resp[$i]["Name"]; ?>
-                                        </span>
+                                        </p>
                                       </div>
 
                                   </div>
@@ -101,44 +101,55 @@
 
 
 
-              <?php } ?>
+          <?php endif; } ?>
 
 
-                      <div class="col" id="sensors">
-                          <div class="card overflow-hidden" data-mcu="2457427247_temp" data-uid="2457427247" data-type="temp">
-                              
-                              <div class="card-header border-0 d-flex flex-row justify-content-between align-items-center">
-                                    <div class="blob">
-                                        <!-- This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
-                                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                          <path fill="#30a853" d="M51.5,-50.8C64.8,-38.2,72.2,-19.1,69.1,-3.1C65.9,12.9,52.3,25.7,39,37.4C25.7,49.1,12.9,59.5,0.1,59.4C-12.6,59.3,-25.2,48.6,-37.3,36.9C-49.4,25.2,-60.9,12.6,-62.4,-1.5C-63.8,-15.5,-55.2,-31.1,-43.1,-43.6C-31.1,-56.1,-15.5,-65.6,1.8,-67.4C19.1,-69.2,38.2,-63.3,51.5,-50.8Z" transform="translate(100 100)" />
-                                        </svg>
-                                    </div>
-                                    <img src="<?=DOMAIN ?>/img/Temperature.png" class="position-relative" alt="temp">
-                                    <div class="datalive"><span class="h2 value">--- </span><span class="unit">-</span></div>
-                              </div>
+<script>
 
-                              <div class="card-body">
-                                  <div class="card-text">
-                                      
-                                      <div class="">
-                                        <small class="h6" data-type="">Sensore di temp</small>
-                                        <p>
-                                          Nome: hthrftht"
-                                        </p>
-                                      </div>
+    window.addEventListener('load', function () {
 
-                                  </div>
-                              </div>
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
 
-                              <div class="card-footer text-start border-0">
-                                        <div class="btn btn-outline-success btn-sm btn-rounded" disabled style="cursor: default;"> Attivato </div>
-                              </div>
+      async function getBlob(iterator) {
+          let random = getRandomInt(1, 8);
+          const blob = await fetch('img/blobs/blob'+random+'.svg')
 
-                          </div>
-                      </div>
+          const text = await blob.text();
+          //console.log("fetch: "+text)
+          document.querySelector(".blob.shape"+iterator).innerHTML = text;
+          document.querySelector(".blob.shape"+iterator+" svg").style.animation = "shape0"+iterator+" 10s ease-in-out infinite;";
+          document.querySelector(".blob.shape"+iterator+" svg").style.fill = '#000';
+      }
 
 
+                                  
+
+
+      const blob = document.querySelectorAll('.blob');
+      for (var i = 0; i < blob.length; i++) {
+        //el.style.color = "orange";
+
+        //console.log("sono nel "+[i]+" loop")
+        //console.log("return "+getBlob());
+        getBlob([i]);
+
+        //.innerHTML = text;
+        //document.querySelector(".blob.shape"+i);
+        //document.querySelector(".blob.shape"+[i]+"").innerHTML = text;
+        
+
+
+
+
+      }
+
+                                  
+    });
+</script>
 
 
 <!--- NON TOCCARE
@@ -269,8 +280,13 @@
             socket.on('data', (data) => {
                 //alert(data);
                 const sensor = JSON.parse(data);
-                 document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .datalive .value').innerHTML = sensor.Value;
-                 document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .unit').innerHTML = " "+sensor.Unit;
+                alert(data)
+
+                if(document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"]')){
+                      document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .datalive .value').innerHTML = sensor.Value;
+                      document.querySelector('#sensors .card[data-mcu="'+sensor.MCU_ID+'_'+sensor.Type+'"] .unit').innerHTML = " "+sensor.Unit;
+                }
+                 
             });
         </script>
 
