@@ -25,7 +25,7 @@
 
                 <div class="col-md-6 col-12" >
 
-                    <div class="card my-3" data-sensor-uid="1234" data-sensor-type="Temperatura" data-mdb-toggle="modal" data-mdb-target="#addSensorModal">
+                    <div class="card my-3" data-sensor-uid="1234" data-sensor-type="Temperature" data-mdb-toggle="modal" data-mdb-target="#addSensorModal">
                         <div class="card-body d-flex flex-row justify-content-around align-items-center">
                             <img src="<?=DOMAIN?>img/Temperature.png" class="img-fluid" />
                             <h5 class="card-title">Temperatura</h5>
@@ -37,7 +37,7 @@
 
                 <div class="col-md-6 col-12" >
                 
-                    <div class="card my-3" data-sensor-uid="1234" data-sensor-type="pressione" data-mdb-toggle="modal" data-mdb-target="#addSensorModal">
+                    <div class="card my-3" data-sensor-uid="1234" data-sensor-type="Pressure" data-mdb-toggle="modal" data-mdb-target="#addSensorModal">
                         <div class="card-body d-flex flex-row justify-content-around align-items-center">
                             <img src="<?=DOMAIN?>img/Pressure.png" class="img-fluid" />
                             <h5 class="card-title">Pressione</h5>
@@ -49,10 +49,10 @@
 
                 <div class="col-md-6 col-12" >
                 
-                    <div class="card my-3" data-sensor-uid="1234" data-sensor-type="barometro" data-mdb-toggle="modal" data-mdb-target="#addSensorModal">
+                    <div class="card my-3" data-sensor-uid="1234" data-sensor-type="Brightness" data-mdb-toggle="modal" data-mdb-target="#addSensorModal">
                         <div class="card-body d-flex flex-row justify-content-around align-items-center">
-                            <img src="<?=DOMAIN?>img/Barometer.png" class="img-fluid" />
-                            <h5 class="card-title">Barometro</h5>
+                            <img src="<?=DOMAIN?>img/Brightness.png" class="img-fluid" />
+                            <h5 class="card-title">Luminosità</h5>
                             <button type="button" class="btn btn-outline-primary btn-link border-0"> <i class="fas fa-2x fa-angle-right"></i> </button>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
 
                 <div class="col-md-6 col-12" >  
 
-                    <div class="card my-3" data-sensor-uid="1234" data-sensor-type="Infrarossi" data-mdb-toggle="modal" data-mdb-target="#addSensorModal">
+                    <div class="card my-3" data-sensor-uid="1234" data-sensor-type="Infrared" data-mdb-toggle="modal" data-mdb-target="#addSensorModal">
                         <div class="card-body d-flex flex-row justify-content-around align-items-center">
                             <img src="<?=DOMAIN?>img/Infrared.png" class="img-fluid" />
                             <h5 class="card-title">Infrarossi</h5>
@@ -73,10 +73,10 @@
 
                 <div class="col-md-6 col-12" >  
 
-                    <div class="card my-3" data-sensor-uid="1234" data-sensor-type="Igrometro" data-mdb-toggle="modal" data-mdb-target="#addSensorModal">
+                    <div class="card my-3" data-sensor-uid="1234" data-sensor-type="Anemometer" data-mdb-toggle="modal" data-mdb-target="#addSensorModal">
                         <div class="card-body d-flex flex-row justify-content-around align-items-center">
-                            <img src="<?=DOMAIN?>img/Igrometro.png" class="img-fluid" />
-                            <h5 class="card-title">Igrometro</h5>
+                            <img src="<?=DOMAIN?>img/Anemometer.png" class="img-fluid" />
+                            <h5 class="card-title">Anemometro</h5>
                             <button type="button" class="btn btn-outline-primary btn-link border-0"> <i class="fas fa-2x fa-angle-right"></i> </button>
                         </div>
                     </div>
