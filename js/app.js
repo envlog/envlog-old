@@ -82,7 +82,7 @@ function CtoF(fahrenheit) {
 //CONVERT COORD2NAMECITY
 function geotocity(geolat, geolon) {
 
-    let reversegeopath = "http://api.openweathermap.org/geo/1.0/reverse?";
+    let reversegeopath = "https://api.openweathermap.org/geo/1.0/reverse?";
 
     let lat = geolat;
     let lon = geolon;

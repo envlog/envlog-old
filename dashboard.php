@@ -55,6 +55,7 @@
             $resp = json_decode($resp, true);
             //echo "</pre>";
 
+            if(count($resp) < 4): echo " "; endif;
 
             for ($i = 0; $i < 4; $i++) {
             
@@ -87,13 +88,12 @@
 
                                   </div>
                               </div>
-
                               <div class="card-footer text-start border-0">
-                                    <?php if ($resp[$i]["Enabled"]): ?>
+                                    <?php if ($resp[$i]["Enabled"] == 1) { ?>
                                         <div class="btn btn-outline-success btn-sm btn-rounded" disabled style="cursor: default;"> Attivato </div>
-                                    <? else: ?>
+                                    <?php } else {?>
                                       <div class="btn btn-outline-danger btn-sm btn-rounded" disabled style="cursor: default;"> Disattivato </div>
-                                    <?php endif; ?>
+                                    <?php } ?>
                               </div>
 
                           </div>
@@ -273,7 +273,7 @@
 
         <script src="js/socket.io.min.js"></script>
         <script>
-            const socket = io("http://ws.envlog.mitello.xyz", { transports: ['websocket'] });
+            const socket = io("https://ws.envlog.mitello.xyz", { transports: ['websocket'] });
             socket.on('connect', () => console.log("Connected"));
             socket.on('disconnect', () => console.error("Lost connection to server!"));
 

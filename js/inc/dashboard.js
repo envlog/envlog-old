@@ -144,7 +144,7 @@ function setForecast(geolat, geolon) {
       document.getElementById("wrapper-forecast-temp-dAT").innerHTML = dATTemp + "°";
 
       // Icone
-      let iconBaseUrl = "http://openweathermap.org/img/wn/";
+      let iconBaseUrl = "https://openweathermap.org/img/wn/";
       let iconFormat = ".png";
 
       // Oggi
