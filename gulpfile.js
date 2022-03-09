@@ -60,5 +60,4 @@ exports.default = function () {
     });
     watch("src/scss/**/*.scss", scss);
     watch("src/scss/custom/inc/*.scss", custom);
-    watch("*.html").on("change", reload);
 }

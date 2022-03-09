@@ -1,5 +1,66 @@
 // Your custom variables
 
-main {
-    background: rgb(1, 255, 1);
+.header span {
+    font-family: $secondary-font;
+    font-size: 2em;
 }
+.sidebar main {
+    margin-top: 5rem;
+}
+.masklock {
+  backdrop-filter: blur(9px);
+  background-color: rgba($black, 0.55);
+}
+
+html {
+  margin-top: -32px;
+}
+
+//rounded cards
+.card {
+  border-radius: .60rem;
+}
+
+.modal-bottom {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) !important;
+    margin: auto;
+    margin-bottom: 0;
+    width: fit-content;
+    max-width: 100%;
+    & .modal-content {
+        border-radius: 30px 30px 0 0;
+    }
+
+}
+
+//search in sensortype
+html,body,.intro {
+  height: 35vh;
+}
+
+//backgrounds
+.custom-bg-aqua {
+  background-image: linear-gradient( #1acfbf, $info);
+}
+.custom-bg-coral {
+  background-image: linear-gradient( sandybrown, tomato);
+}
+.custom-bg-green {
+  background-image: linear-gradient( palegreen, mediumaquamarine);
+}
+.custom-bg-gold {
+  background-image: linear-gradient( moccasin, #Ffcc20);
+}
+
+//media query margini
+@media (min-width: 768px){
+  html {
+    margin-left: -32px;
+    margin-top: -16px;
+  }
+}
+
